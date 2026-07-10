@@ -81,7 +81,8 @@ body{background:#04100a;color:#f5e6c0;font-family:'Cormorant Garamond',serif;ove
 @keyframes rot{to{transform:rotate(360deg)}}
 
 /* NAMES */
-.cv-label{font-family:'Jost',sans-serif;font-weight:100;font-size:8px;letter-spacing:.35em;color:rgba(201,151,26,.4);text-transform:uppercase;margin-bottom:10px;animation:riseIn 1s ease 1s both;}
+.cv-label{font-family:'Jost',sans-serif;font-weight:100;font-size:8.5px;letter-spacing:.35em;color:rgba(201,151,26,.4);text-transform:uppercase;margin-bottom:10px;animation:riseIn 1s ease 1s both;}
+.cv-host{font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:rgba(201,151,26,.45);margin-bottom:10px;animation:riseIn 1s ease 1.1s both;}
 .cv-groom{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,9vw,60px);font-weight:300;color:var(--ivory);line-height:1;letter-spacing:.04em;animation:riseIn 1s ease 1.15s both;}
 .cv-amp{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,6vw,40px);color:var(--gold);font-style:italic;font-weight:300;display:block;margin:5px 0;animation:riseIn 1s ease 1.25s both;}
 .cv-bride{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,8.5vw,58px);font-weight:600;color:var(--ivory);line-height:1;letter-spacing:.04em;margin-bottom:26px;animation:riseIn 1s ease 1.35s both;}
@@ -100,6 +101,7 @@ section{padding:70px 24px;max-width:500px;margin:0 auto;text-align:center;}
 .s-ar{font-family:'Scheherazade New',serif;font-size:clamp(18px,4vw,26px);color:var(--gold2);direction:rtl;margin-bottom:8px;opacity:.85;}
 .eyebrow{font-family:'Jost',sans-serif;font-weight:100;font-size:8px;letter-spacing:.32em;color:rgba(201,151,26,.5);text-transform:uppercase;margin-bottom:10px;}
 .s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,7vw,46px);font-weight:300;color:var(--ivory);line-height:1.1;letter-spacing:.03em;margin-bottom:6px;}
+.s-bn{font-family:'Hind Siliguri',sans-serif;font-size:13px;color:rgba(201,151,26,.42);font-weight:300;}
 
 /* section backgrounds */
 .sec-dark{background:linear-gradient(160deg,#071a10 0%,#04100a 55%,#060f07 100%);}
@@ -109,6 +111,10 @@ section{padding:70px 24px;max-width:500px;margin:0 auto;text-align:center;}
 .ibox{background:rgba(13,51,32,.3);border:1px solid rgba(201,151,26,.18);padding:22px 20px;max-width:400px;width:100%;text-align:center;margin:16px auto 0;}
 .ibox-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(245,230,192,.7);line-height:1.8;}
 .ibox-bold{color:var(--ivory);font-weight:600;font-style:normal;}
+.ibox-bn{font-family:'Hind Siliguri',sans-serif;font-size:13px;color:rgba(245,230,192,.55);line-height:1.8;font-weight:300;margin-bottom:8px;}
+.ibox-divider{height:1px;background:rgba(201,151,26,.15);margin:14px 0;}
+.ibox-parents{display:flex;flex-direction:column;gap:4px;margin-top:4px;}
+.ibox-p{font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(201,151,26,.5);font-style:italic;}
 
 /* ── PHOTO HERO ── */
 .photo-section{padding:0;max-width:100%;overflow:hidden;position:relative;}
@@ -120,6 +126,7 @@ section{padding:70px 24px;max-width:500px;margin:0 auto;text-align:center;}
 }
 .photo-caption{padding:28px 24px 48px;text-align:center;background:#04100a;}
 .photo-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,5vw,30px);font-weight:300;color:var(--ivory);line-height:1.4;}
+.photo-bn{font-family:'Hind Siliguri',sans-serif;font-size:12px;color:rgba(201,151,26,.4);margin-top:6px;}
 .qr-ar{font-family:'Scheherazade New',serif;font-size:17px;color:rgba(201,151,26,.55);direction:rtl;margin-top:10px;}
 .qr-en{font-family:'Jost',sans-serif;font-weight:200;font-size:9px;letter-spacing:.1em;color:rgba(201,151,26,.3);margin-top:3px;}
 
@@ -129,7 +136,8 @@ section{padding:70px 24px;max-width:500px;margin:0 auto;text-align:center;}
 .ev-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);opacity:.65;}
 .ev-badge{font-family:'Jost',sans-serif;font-weight:200;font-size:8px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:5px;}
 .ev-name{font-family:'Cinzel',serif;font-size:16px;color:var(--pale);letter-spacing:.06em;margin-bottom:2px;}
-.ev-detail{font-family:'Jost',sans-serif;font-weight:300;font-size:11.5px;color:rgba(201,151,26,.5);letter-spacing:.04em;line-height:1.75;}
+.ev-name-bn{font-family:'Hind Siliguri',sans-serif;font-size:11px;color:rgba(201,151,26,.38);margin-bottom:6px;font-weight:300;}
+.ev-detail{font-family:'Jost',sans-serif;font-weight:300;font-size:11.5px;color:rgba(201,151,26,.42);letter-spacing:.04em;line-height:1.75;}
 
 /* ── GALLERY ── */
 .gallery-section{background:#04100a;padding:60px 0 0;}
@@ -151,17 +159,40 @@ section{padding:70px 24px;max-width:500px;margin:0 auto;text-align:center;}
 .venue-name{font-family:'Cinzel',serif;font-size:17px;color:var(--pale);letter-spacing:.08em;margin-bottom:6px;}
 .venue-addr{font-family:'Jost',sans-serif;font-weight:300;font-size:12px;color:rgba(201,151,26,.42);letter-spacing:.04em;line-height:1.8;}
 .map-btn{display:inline-block;margin-top:16px;border:1px solid rgba(201,151,26,.4);color:var(--gold);font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.2em;padding:11px 24px;text-decoration:none;transition:all .3s;background:transparent;}
+.cal-btn{display:block;margin:14px auto 0;border:1px solid rgba(201,151,26,.22);color:rgba(201,151,26,.5);font-family:'Cinzel',serif;font-size:8px;letter-spacing:.18em;padding:11px 20px;background:transparent;cursor:pointer;transition:all .3s;max-width:260px;width:100%;}
+.cal-btn:hover{color:var(--gold);border-color:rgba(201,151,26,.45);}
 
 /* ── RSVP FORM ── */
 .form-wrap{max-width:400px;width:100%;margin:0 auto;text-align:left;}
-.f-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(201,151,26,.48);text-align:center;margin-bottom:18px;line-height:1.6;}
+.f-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(201,151,26,.48);text-align:center;margin-bottom:6px;line-height:1.6;}
+.f-note-bn{font-family:'Hind Siliguri',sans-serif;font-size:11px;color:rgba(201,151,26,.32);text-align:center;margin-bottom:18px;font-weight:300;}
 .ff{margin-bottom:12px;}
 .fl{font-family:'Jost',sans-serif;font-weight:200;font-size:8px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:5px;}
-.fi,.fta{width:100%;background:rgba(255,247,230,.03);border:1px solid rgba(201,151,26,.2);color:var(--ivory);font-family:'Cormorant Garamond',serif;font-size:15px;padding:11px 13px;outline:none;border-radius:0;-webkit-appearance:none;transition:border-color .3s;}
+.fi,.fsel,.fta{width:100%;background:rgba(255,247,230,.03);border:1px solid rgba(201,151,26,.2);color:var(--ivory);font-family:'Cormorant Garamond',serif;font-size:15px;padding:11px 13px;outline:none;border-radius:0;-webkit-appearance:none;transition:border-color .3s;}
 .fi::placeholder,.fta::placeholder{color:rgba(201,151,26,.22);}
-.fi:focus,.fta:focus{border-color:rgba(201,151,26,.5);}
+.fi:focus,.fsel:focus,.fta:focus{border-color:rgba(201,151,26,.5);}
+.fsel option{background:#071a10;color:var(--ivory);}
 .fta{resize:none;height:72px;}
-.wa-btn{width:100%;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.35);color:#6ed98e;font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.22em;padding:14px;cursor:pointer;margin-top:12px;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;}
+.tog-row{display:flex;gap:8px;flex-wrap:wrap;}
+.tog{flex:1;min-width:72px;border:1px solid rgba(201,151,26,.18);padding:10px 6px;text-align:center;cursor:pointer;font-family:'Jost',sans-serif;font-weight:300;font-size:11px;color:rgba(201,151,26,.42);letter-spacing:.05em;transition:all .2s;user-select:none;}
+.tog.on{background:rgba(201,151,26,.1);border-color:var(--gold);color:var(--pale);}
+.wa-btn{width:100%;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.35);color:#6ed98e;font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.22em;padding:14px;cursor:pointer;margin-top:12px;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.sub-btn{width:100%;background:transparent;border:1px solid rgba(201,151,26,.4);color:var(--gold);font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.25em;padding:14px;cursor:pointer;margin-top:10px;transition:all .3s;}
+.sub-btn:hover{background:rgba(201,151,26,.09);color:var(--gold2);}
+.suc-box{display:none;background:rgba(201,151,26,.06);border:1px solid rgba(201,151,26,.22);padding:16px;text-align:center;margin-top:12px;}
+.suc-box.show{display:block;}
+.suc-box p{font-family:'Scheherazade New',serif;font-size:18px;color:var(--pale);}
+
+/* ── GUESTBOOK ── */
+.gb-list{max-width:420px;width:100%;margin:18px auto 0;display:flex;flex-direction:column;gap:10px;}
+.gb-entry{background:rgba(201,151,26,.04);border:1px solid rgba(201,151,26,.13);padding:14px;text-align:left;}
+.gb-name{font-family:'Cinzel',serif;font-size:11px;color:var(--gold2);letter-spacing:.08em;margin-bottom:4px;}
+.gb-msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:rgba(245,230,192,.6);line-height:1.5;}
+.gb-row{display:flex;flex-wrap:wrap;gap:8px;max-width:420px;width:100%;margin:14px auto 0;}
+.gb-in{flex:1;min-width:120px;background:rgba(255,247,230,.03);border:1px solid rgba(201,151,26,.2);color:var(--ivory);font-family:'Cormorant Garamond',serif;font-size:15px;padding:11px 13px;outline:none;border-radius:0;}
+.gb-in::placeholder{color:rgba(201,151,26,.22);}
+.gb-in:focus{border-color:rgba(201,151,26,.45);}
+.gb-btn{background:transparent;border:1px solid rgba(201,151,26,.35);color:var(--gold);font-family:'Cinzel',serif;font-size:8px;letter-spacing:.18em;padding:11px 18px;cursor:pointer;white-space:nowrap;transition:all .3s;}
 
 /* ── CLOSING ── */
 .closing-section{
@@ -170,8 +201,10 @@ section{padding:70px 24px;max-width:500px;margin:0 auto;text-align:center;}
 }
 .closing-ar{font-family:'Scheherazade New',serif;font-size:clamp(24px,5.5vw,34px);color:var(--gold);direction:rtl;margin-bottom:10px;}
 .closing-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:rgba(201,151,26,.42);margin-bottom:8px;line-height:1.75;max-width:300px;margin-left:auto;margin-right:auto;}
+.closing-bn{font-family:'Hind Siliguri',sans-serif;font-size:12px;color:rgba(201,151,26,.3);margin-bottom:26px;font-weight:300;}
 .closing-names{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,6vw,38px);font-weight:300;color:var(--ivory);letter-spacing:.04em;}
 .closing-sub{font-family:'Jost',sans-serif;font-weight:100;font-size:9px;letter-spacing:.2em;color:rgba(201,151,26,.3);text-transform:uppercase;margin-top:8px;}
+.closing-love{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:rgba(201,151,26,.25);margin-top:20px;}
 
 /* section separator */
 .sep{display:flex;align-items:center;gap:14px;padding:0 28px;max-width:500px;margin:0 auto;}
@@ -193,156 +226,4 @@ section{padding:70px 24px;max-width:500px;margin:0 auto;text-align:center;}
 }
 .cv-bg-img {
   position: absolute; inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070'); /* IMAGES OVERRIDE */
-  background-size: cover;
-  background-position: center;
-  opacity: 0.18;
-  filter: grayscale(30%);
-}
-
-/* Glitter Particle Canvas */
-#glitter-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 999;
-}
-</style>
-</head>
-<body>
-
-<canvas id="glitter-canvas"></canvas>
-
-<!-- ── COVER ── -->
-<div class="cover">
-  <div class="cv-bg-img"></div>
-  <div class="cv-lattice"></div>
-  <div class="cv-glow"></div>
-  <div class="cv-brd"></div>
-  <div class="corn tl">🏆</div><div class="corn tr">🏆</div><div class="corn bl">🏆</div><div class="corn br">🏆</div>
-
-  <div class="bism">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
-  <div class="bism-en">In the name of Allah, the Most Gracious, the Most Merciful</div>
-
-  <div class="seal">
-    <div class="sr1"></div><div class="sr2"></div><div class="sr3"></div>
-    <div class="score">
-      <div class="seal-rs">S & R</div>
-      <div class="seal-dot">✦</div>
-      <div class="seal-yr">2026</div>
-    </div>
-    <div class="seal-top">Wedding Master Plan</div>
-  </div>
-
-  <div class="cv-label">The Wedding Celebration of</div>
-  <div class="cv-groom">Raju</div>
-  <div class="cv-amp">&</div>
-  <div class="cv-bride">Sabina</div>
-
-  <div class="cv-date" style="margin-top: 20px;">
-    <div class="cv-date-main">August 5 – 8, 2026</div>
-    <div class="cv-date-ven">Pandua, Hooghly & Gulmohar Garden</div>
-  </div>
-
-  <div class="cv-scroll">Scroll to Explore Timeline ↓</div>
-</div>
-
-<div class="sep"><div class="sep-l"></div><div class="sep-g">❦</div><div class="sep-l"></div></div>
-
-<!-- ── INVITATION TEXT ── -->
-<section class="sec-dark reveal">
-  <div class="eyebrow">The Invitation</div>
-  <h2 class="s-title">Welcome Guests</h2>
-  <div class="s-divider"><div class="s-div-line"></div><div class="s-div-gem">✦</div><div class="s-div-line"></div></div>
-  <div class="ibox">
-    <p class="ibox-en">Under the blessings of Almighty Allah, we cordially invite you and your family to share in the joy of our wedding master plan sequence. Your presence is our most cherished blessing.</p>
-  </div>
-</section>
-
-<!-- ── PHOTO BANNER ── -->
-<div class="photo-section reveal">
-  <img class="photo-hero" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200" alt="Featured Couple Portrait"> <!-- IMAGES OVERRIDE -->
-  <div class="photo-overlay"></div>
-  <div class="photo-caption">
-    <div class="photo-quote">"And We created you in pairs"</div>
-    <div class="qr-ar">وَمِنْ كُلِّ شَيْءٍ خَلَقْنَا زَوْجَيْنِ</div>
-    <div class="qr-en">— Surah Az-Zariyat: 49</div>
-  </div>
-</div>
-
-<!-- ── EVENT ITINERARY TIMELINE ── -->
-<section class="sec-mid reveal">
-  <div class="eyebrow">Itinerary Sequence</div>
-  <h2 class="s-title">Event Timeline</h2>
-  <div class="s-divider"><div class="s-div-line"></div><div class="s-div-gem">✦</div><div class="s-div-line"></div></div>
-
-  <div class="ev-stack">
-    <!-- Day 1 -->
-    <div class="ev-card">
-      <div class="ev-badge">Day 1 — Wednesday, August 5</div>
-      <div class="ev-name">Mehendi Ceremony (Bride's Side)</div>
-      <div class="ev-detail">
-        📍 <strong>Venue:</strong> Bride's Home, Pandua, Hooghly<br>
-        ✨ Custom floral staging, decorative henna application, family welcome gathering.
-      </div>
-    </div>
-
-    <!-- Day 2 -->
-    <div class="ev-card">
-      <div class="ev-badge">Day 2 — Thursday, August 6</div>
-      <div class="ev-name">Mehendi & Kheer Pitha</div>
-      <div class="ev-detail">
-        📍 <strong>Locations:</strong> Groom's Home & Bride's Home (Pandua)<br>
-        🕒 <strong>6:00 PM</strong> — Groom's family departs to Gulmohar Garden.<br>
-        🕒 <strong>7:00 PM</strong> — Kheer Pitha Ceremony begins at Bride's side with traditional Totto exchanges.<br>
-        🕒 <strong>10:30 PM Onwards</strong> — Bride's family departs to Gulmohar Garden.
-      </div>
-    </div>
-
-    <!-- Day 3 -->
-    <div class="ev-card">
-      <div class="ev-badge">Day 3 — Friday, August 7</div>
-      <div class="ev-name">The Wedding Day</div>
-      <div class="ev-detail">
-        📍 <strong>Main Venue:</strong> Gulmohar Garden<br>
-        🕒 <strong>10:00 AM - 12:00 PM</strong> — Flower-Haldi style celebration near pool layout.<br>
-        🕒 <strong>2:00 PM</strong> — Kheer Pitha Sequence (Groom Side).<br>
-        🕒 <strong>3:00 PM</strong> — Sangeet-style collaborative performances.<br>
-        🕒 <strong>6:00 PM</strong> — Ribbon cutting & grand Baraat entry reception.<br>
-        🕒 <strong>7:30 PM</strong> — Formal Nikah Ceremony & Official Civil Marriage Registration.<br>
-        🕒 <strong>8:00 PM</strong> — Grand Multi-Cuisine Dinner Reception & Portraits.<br>
-        👔 <strong>Dress Code:</strong> Sky Blue/Yellow (Haldi), Sage Green/Peacock Blue (Kheer Pitha), Maroon Lehenga/White Sherwani (Nikah).
-      </div>
-    </div>
-
-    <!-- Day 4 -->
-    <div class="ev-card">
-      <div class="ev-badge">Day 4 — Saturday, August 8</div>
-      <div class="ev-name">Walima Banquet</div>
-      <div class="ev-detail">
-        📍 <strong>Venue:</strong> Walima Hall<br>
-        🕒 <strong>12:00 PM</strong> — Newlywed couple's grand entry reception.<br>
-        🕒 <strong>12:30 PM Onwards</strong> — Grand Walima Lunch Banquet for 800 confirmed family members and honored guests.
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── GALLERY GRID ── -->
-<section class="gallery-section reveal">
-  <div class="gallery-header">
-    <div class="eyebrow">Captured Memories</div>
-    <h2 class="s-title">Gallery</h2>
-  </div>
-  <div class="gallery-grid">
-    <img class="gimg" src="https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?q=80&w=600" alt="Gallery Element 1"> <!-- IMAGES OVERRIDE -->
-    <img class="gimg" src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600" alt="Gallery Element 2"> <!-- IMAGES OVERRIDE -->
-    <img class="gimg wide" src="https://images.unsplash.com/photo-1519225495810-7512c696505a?q=80&w=1200" alt="Gallery Element 3 (Wide)"> <!-- IMAGES OVERRIDE -->
-  </div>
-</section>
-
-<!-- ── COUNTDOWN ── -->
-<section class=
+  background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAcFBQYFBAcGBgYIBwcICxILCwoKCxYPEA0SGhYbGhkWGRgcICgiHB4mHhgZIzAkJiorLS4tGyIyNTEsNSgsLSz/2wBDAQcICAsJCxULCxUsHRkdLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCz/wAARCAcLBLADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD53oNGaKkYlFGKMGgYUopMGlFIApKdTaBhS0mKWmAGkpe1Jg0hbhRRijFMAooxRigAooooAKKKKACiiigApDS0lABS0mKWgApKWkxQAUUUUAFFFFAgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoFFFAC0UZozQAUUZooAKKKKACiiigAooooAKKKKACiiigAooooAKUUlFA0LSUtJQK4UUUUAFFFFABRRRQAoopKXNA0FFFFAwoNFBoE2JSikxS0CCiiigoKKKKBBRRRQIKKKKB2CiiigLBRRRQDYUUUUCCiiigAooooAKKKKACiiigAooooAKKKKACijFGDQAtA60tHekMWlFJSimAtAooFAC0UUUAFFFGKQBUUxwtS4qKf7opgV6KKKZIhopTSYoAKKKKACg0UUAJRRiigAooopgFFFFABRRRQAClpBS0gJ6BRilApFWClpMUUtxi0lFFABRRRTAKKKKAsLRmkxRikAUUUUwCiiigVxKKMUYoAKKXFJikAUUUUxBRRRQMKKKKACiiigBDRQaKBBRRRQAUUUUAFFFFABRSZozQAtFJmjNAC0UmaM0ALRSZozQAtFJmjNAC0UlLQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUtJRmgBaKM0UAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUDCiiigQUUUUDFopKXNAgoozRmgYUUZozQMKKM0UEhRRRQNBRRRQMKKKKBBRRRQO4UUUUEhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQNIcOlFIOlLmkAUUuKMUAFKKMUAUwFoFGKKAFoooxSYBS0mKWkgCobjoKmqC4PSmgIKKKKZIUUUUwENFBooAKKKKACg0UGgBKKKKYBRRRSAKKKKYAKWkFLSAsUUUUixc0lFFIAooopgFLikozSAKKKKADNLmkoosAUUUUwClxSUZpMLBRRRQAuaQ0UUAJRS4oxTEJRS4pKQBRRRTAKKKKAENFLSYoEFFFFABRRRQAUUUmaACiiigAooooAKKKKACiiigAooooABS0lGaAFopM0ZoAWiiigAooooAKKKKACiiigAooooAKKKKAAUtJRmgBaKTNGaAFopM0ZoAWiiigAooooAKKKKACiiigAooooAKKKKACiiigYUUUUCCiiigAooooAKKKKACiiigYUopKM0ALRSZpaAQUUUUAFFFFABRRRQOwUUUUEhRRRQAUUUUDCiiigQUUUUAFFFFABRRRQAUUUUFIUUUDpS4oELS0lLigBaBRRQAtFFFIApRSYpQKTAKKXFGKAEqvcdRVnFV7jqKaAgooopkhRRRTAQ0UGigAooooAKDRQaAEooooAKKKKYBRRS4pAIKWjFFAFiiiikWFFFLSASilpKACiiimAClxSUtSwEopTSU0AtFJRQAUUUUwFxSGiikAUUUUwClxSUUgFpppaKAEopaKAEopaSgQUUUUXAQ0UtFMBKKKKBBTTTqYxoAN1KDUdKDzQIkopBS0D
