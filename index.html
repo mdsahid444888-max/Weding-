@@ -16,8 +16,48 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg-color); color: var(--text-light); font-family: 'Poppins', sans-serif; text-align: center; line-height: 1.6; }
-        .container { max-width: 500px; margin: 0 auto; padding: 20px; background-color: var(--bg-color); position: relative; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+        
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-light); 
+            font-family: 'Poppins', sans-serif; 
+            text-align: center; 
+            line-height: 1.6; 
+            overflow-x: hidden;
+        }
+
+        /* Fixed Background Canvas for Glitter Snowflakes */
+        #glitterCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .container { 
+            max-width: 500px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: var(--bg-color); 
+            position: relative; 
+            box-shadow: 0 0 30px rgba(0,0,0,0.5); 
+            z-index: 2; /* Sits cleanly above glitter background */
+        }
+
+        /* Scroll Animation Setup */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .arabic { font-size: 24px; color: var(--gold-primary); margin: 20px 0 5px; font-family: serif; }
         .translation { font-size: 9px; letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 30px; }
         
@@ -29,25 +69,31 @@
         .main-date { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 2px; color: var(--gold-primary); margin-top: 30px; }
         .main-venue { font-family: 'Playfair Display', serif; font-style: italic; color: var(--text-muted); font-size: 14px; margin-top: 5px; }
         
-        /* Advanced Luxury Image Grid */
+        /* Modernized Gallery Elements */
         .image-gallery { margin: 30px 0; display: flex; flex-direction: column; gap: 12px; }
-        .main-couple-img { width: 100%; height: auto; border-bottom: 3px solid var(--gold-secondary); object-fit: cover; }
+        .main-couple-img { width: 100%; height: auto; border-bottom: 3px solid var(--gold-secondary); object-fit: cover; transition: transform 0.6s ease; }
+        .main-couple-img:hover { transform: scale(1.02); }
         .gallery-title { font-family: 'Playfair Display', serif; font-size: 26px; margin: 35px 0 5px; }
         .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 5px; }
-        .gallery-img { width: 100%; height: 180px; object-fit: cover; border: 1px solid rgba(223, 186, 107, 0.3); }
-        .full-gallery-img { width: 100%; height: 260px; object-fit: cover; border: 1px solid rgba(223, 186, 107, 0.3); margin-top: 2px; }
+        .gallery-img { width: 100%; height: 180px; object-fit: cover; border: 1px solid rgba(223, 186, 107, 0.3); transition: transform 0.5s ease, box-shadow 0.5s ease; }
+        .gallery-img:hover { transform: scale(1.04); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+        .full-gallery-img { width: 100%; height: 260px; object-fit: cover; border: 1px solid rgba(223, 186, 107, 0.3); margin-top: 2px; transition: transform 0.5s ease; }
+        .full-gallery-img:hover { transform: scale(1.02); }
 
         .quote-box { padding: 25px 15px; background: linear-gradient(180deg, var(--card-bg), var(--bg-color)); }
         .quote-box h3 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; margin-bottom: 10px; }
         .section-title { font-family: 'Playfair Display', serif; font-size: 28px; margin: 40px 0 20px; }
-        .event-card { background-color: var(--card-bg); border: 1px solid rgba(223, 186, 107, 0.3); padding: 20px; margin-bottom: 20px; text-align: left; border-radius: 4px; }
+        
+        .event-card { background-color: var(--card-bg); border: 1px solid rgba(223, 186, 107, 0.3); padding: 20px; margin-bottom: 20px; text-align: left; border-radius: 4px; transition: transform 0.3s ease, border-color 0.3s ease; }
+        .event-card:hover { transform: translateY(-5px); border-color: var(--gold-primary); }
         .event-card .card-date { font-size: 11px; color: var(--gold-primary); letter-spacing: 1px; text-transform: uppercase; }
         .event-card h4 { font-family: 'Playfair Display', serif; font-size: 20px; margin: 5px 0; }
         .event-card p { font-size: 13px; color: var(--text-muted); margin: 4px 0; }
         
         .countdown-container { margin: 40px 0; padding: 20px; border: 1px solid rgba(223, 186, 107, 0.2); }
         .timer { display: flex; justify-content: space-around; margin-top: 15px; }
-        .time-box { background: var(--card-bg); padding: 10px; width: 70px; border-radius: 4px; border: 1px solid rgba(223, 186, 107, 0.4); }
+        .time-box { background: var(--card-bg); padding: 10px; width: 70px; border-radius: 4px; border: 1px solid rgba(223, 186, 107, 0.4); transition: transform 0.3s ease; }
+        .time-box:hover { transform: scale(1.08); }
         .time-box .num { font-size: 22px; color: var(--gold-primary); font-weight: bold; }
         .time-box .label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; }
 
@@ -56,17 +102,24 @@
         .rsvp-section .subtext { text-align: center; color: var(--gold-primary); font-size: 13px; margin-bottom: 25px; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; font-size: 11px; color: var(--gold-primary); text-transform: uppercase; margin-bottom: 5px; letter-spacing: 1px; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; background: rgba(3, 28, 14, 0.7); border: 1px solid rgba(223, 186, 107, 0.4); padding: 12px; color: white; font-family: inherit; border-radius: 4px; }
-        .rsvp-btn { width: 100%; background: #0b5028; color: white; border: 1px solid var(--gold-primary); padding: 14px; font-weight: 500; cursor: pointer; letter-spacing: 1px; margin-top: 10px; display: flex; justify-content: center; align-items: center; gap: 8px; font-size: 15px; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; background: rgba(3, 28, 14, 0.7); border: 1px solid rgba(223, 186, 107, 0.4); padding: 12px; color: white; font-family: inherit; border-radius: 4px; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold-primary); }
+        
+        .rsvp-btn { width: 100%; background: linear-gradient(135deg, #0b5028 0%, #052915 100%); color: white; border: 1px solid var(--gold-primary); padding: 14px; font-weight: 500; cursor: pointer; letter-spacing: 1px; margin-top: 10px; display: flex; justify-content: center; align-items: center; gap: 8px; font-size: 15px; border-radius: 4px; transition: all 0.3s ease; }
+        .rsvp-btn:hover { background: linear-gradient(135deg, #0d6332 0%, #0b5028 100%); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(223, 186, 107, 0.2); }
+        .rsvp-btn:active { transform: translateY(0); }
     </style>
 </head>
 <body>
+
+<!-- Glitter/Snow Particle Layer -->
+<canvas id="glitterCanvas"></canvas>
 
 <div class="container">
     <div class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
     <div class="translation">In the name of Allah, the most gracious, the most merciful</div>
 
-    <div class="hero">
+    <div class="hero reveal active">
         <div class="monogram">R & S</div>
         <div class="hosted-by">Hosted by Mr. Saifullah Mohmad & Family</div>
         <div class="names">Sk Raju<span>&</span>Sabina Khatun</div>
@@ -74,51 +127,46 @@
         <div class="main-venue">Gulmohar Garden, Pairagachha, Dankuni</div>
     </div>
 
-    <!-- Live Photo Gallery Section -->
     <div class="image-gallery">
-        <!-- Main Couple Photo Display -->
-        <img src="https://i.postimg.cc/3xF42jvN/RYI-2339.jpg" alt="Sk Raju and Sabina Khatun" class="main-couple-img">
+        <img src="https://i.postimg.cc/3xF42jvN/RYI-2339.jpg" alt="Sk Raju and Sabina Khatun" class="main-couple-img reveal">
         
-        <div class="quote-box">
+        <div class="quote-box reveal">
             <h3>Two hearts, one beautiful beginning</h3>
             <div class="arabic" style="font-size: 18px;">وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</div>
             <p style="font-size: 11px; color: var(--text-muted); font-style: italic;">"He placed love and mercy between you" — Quran 30:21</p>
         </div>
 
-        <!-- Moments & Memories Grid Section -->
-        <h3 class="gallery-title">Moments & Memories</h3>
+        <h3 class="gallery-title reveal">Moments & Memories</h3>
         
-        <!-- Large horizontal featured memory photo -->
-        <img src="https://i.postimg.cc/kgmRVYDk/RYI-2373.jpg" alt="Featured Moment" class="full-gallery-img">
+        <img src="https://i.postimg.cc/kgmRVYDk/RYI-2373.jpg" alt="Featured Moment" class="full-gallery-img reveal">
         
-        <!-- Two column split picture showcase -->
-        <div class="gallery-grid">
+        <div class="gallery-grid reveal">
             <img src="https://i.postimg.cc/sg4Q5Phd/RYI-2397.jpg" alt="Memory Grid 1" class="gallery-img">
             <img src="https://i.postimg.cc/xdjk5kv5/RYI-2471.jpg" alt="Memory Grid 2" class="gallery-img">
         </div>
 
-        <div class="gallery-grid" style="margin-top: 0px;">
+        <div class="gallery-grid reveal" style="margin-top: 0px;">
             <img src="https://i.postimg.cc/q7mN5kwP/RYI-2522.jpg" alt="Memory Grid 3" class="gallery-img">
             <img src="https://i.postimg.cc/QM6FyXSr/RYI-2529.jpg" alt="Memory Grid 4" class="gallery-img">
         </div>
     </div>
 
-    <h3 class="section-title">The Celebrations</h3>
-    <div class="event-card">
+    <h3 class="section-title reveal">The Celebrations</h3>
+    <div class="event-card reveal">
         <div class="card-date">Friday • 7th August 2026</div>
         <h4>Nikah Ceremony</h4>
         <p><strong>Nikah:</strong> 2:00 PM IST | <strong>Feast:</strong> 3:00 PM</p>
         <p>Gulmohar Garden, Pairagachha, Dankuni - 712304</p>
     </div>
 
-    <div class="event-card">
+    <div class="event-card reveal">
         <div class="card-date">Saturday • 8th August 2026</div>
         <h4>Walima Reception</h4>
         <p><strong>Reception:</strong> 7:00 PM onwards | <strong>Dinner:</strong> 8:00 PM</p>
         <p>Gulmohar Garden, Pairagachha, Dankuni - 712304</p>
     </div>
 
-    <div class="countdown-container">
+    <div class="countdown-container reveal">
         <div class="arabic" style="font-size: 18px; margin: 0;">العد التنازلي</div>
         <p style="font-size: 11px; color: var(--text-muted); letter-spacing: 1px;">DAYS UNTIL WE SAY QUBOOL HAI</p>
         <div class="timer">
@@ -129,7 +177,7 @@
         </div>
     </div>
 
-    <div class="rsvp-section">
+    <div class="rsvp-section reveal">
         <h3>Will You Join Us?</h3>
         <div class="subtext">Kindly RSVP by 25th July 2026</div>
         
@@ -167,21 +215,22 @@
 </div>
 
 <script>
+    // 1. Interactive Countdown Timer Script
     const targetDate = new Date("August 7, 2026 14:00:00").getTime();
     setInterval(function() {
         const now = new Date().getTime();
         const diff = targetDate - now;
         if (diff > 0) {
-            document.getElementById("days").innerText = Math.floor(diff / (1000*60*60*24));
-            document.getElementById("hours").innerText = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-            document.getElementById("mins").innerText = Math.floor((diff % (1000*60*60)) / (1000*60));
-            document.getElementById("secs").innerText = Math.floor((diff % (1000*60)) / 1000);
+            document.getElementById("days").innerText = String(Math.floor(diff / (1000*60*60*24))).padStart(2, '0');
+            document.getElementById("hours").innerText = String(Math.floor((diff % (1000*60*60*24)) / (1000*60*60))).padStart(2, '0');
+            document.getElementById("mins").innerText = String(Math.floor((diff % (1000*60*60)) / (1000*60))).padStart(2, '0');
+            document.getElementById("secs").innerText = String(Math.floor((diff % (1000*60)) / 1000)).padStart(2, '0');
         }
     }, 1000);
 
+    // 2. WhatsApp Form Redirect Script
     function sendRSVP() {
         const myPhoneNumber = "919426938224"; 
-
         const name = document.getElementById('guestName').value;
         const count = document.getElementById('guestCount').value;
         const event = document.getElementById('eventAttending').value;
@@ -200,7 +249,93 @@
 
         window.open(`https://api.whatsapp.com/send?phone=${myPhoneNumber}&text=${textMessage}`, '_blank');
     }
+
+    // 3. Scroll Reveal Animation Logic
+    function revealOnScroll() {
+        const reveals = document.querySelectorAll('.reveal');
+        for (let i = 0; i < reveals.length; i++) {
+            const windowHeight = window.innerHeight;
+            const elementTop = reveals[i].getBoundingClientRect().top;
+            const elementVisible = 100; // triggers early for elegant viewing
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add('active');
+            }
+        }
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    // 4. Luxury Magic Glitter Snowflake System
+    const canvas = document.getElementById('glitterCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let particlesArray = [];
+    const numberOfParticles = 40; // Keeps performance fluid on mobile browsers
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height - canvas.height;
+            this.size = Math.random() * 2.5 + 0.5; // Tiny elegant dots
+            this.speedY = Math.random() * 0.8 + 0.3; // Gentle downward drift
+            this.speedX = Math.random() * 0.4 - 0.2; // Tiny swaying motion
+            this.opacity = Math.random() * 0.6 + 0.4;
+            this.fadeSpeed = Math.random() * 0.015 + 0.005;
+        }
+        update() {
+            this.y += this.speedY;
+            this.x += this.speedX;
+            
+            // Sparkling flash effect variations
+            this.opacity -= this.fadeSpeed;
+            if (this.opacity <= 0.2 || this.opacity >= 1) {
+                this.fadeSpeed = -this.fadeSpeed;
+            }
+
+            // Loop back seamlessly to top if particle leaves bottom screen
+            if (this.y > canvas.height) {
+                this.y = 0;
+                this.x = Math.random() * canvas.width;
+            }
+        }
+        draw() {
+            ctx.save();
+            ctx.globalAlpha = this.opacity;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            // Deluxe Soft Golden Glitter glow palette
+            ctx.fillStyle = '#dfba6b';
+            ctx.shadowBlur = 6;
+            ctx.shadowColor = '#b3924b';
+            ctx.fill();
+            ctx.restore();
+        }
+    }
+
+    function initParticles() {
+        for (let i = 0; i < numberOfParticles; i++) {
+            particlesArray.push(new Particle());
+        }
+    }
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+            particlesArray[i].draw();
+        }
+        requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
 </script>
 </body>
-          </html>
-          
+</html>
