@@ -320,328 +320,6 @@
             font-size: 0.9rem;
         }
 
-        /* --- RSVP Secti<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Wedding Invitation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&family=Pinyon+Script&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #fcfaf7;
-            --primary-color: #800020; /* Burgundy */
-            --text-color: #2c2c2c;
-            --accent-color: #d4af37; /* Gold */
-            --card-bg: #ffffff;
-        }
-
-        [data-theme="emerald"] {
-            --bg-color: #f4f7f5;
-            --primary-color: #046307; /* Emerald */
-            --text-color: #222222;
-            --accent-color: #cfb53b;
-            --card-bg: #ffffff;
-        }
-
-        [data-theme="sapphire"] {
-            --bg-color: #f0f4f8;
-            --primary-color: #0f2c59; /* Sapphire */
-            --text-color: #1a1a1a;
-            --accent-color: #e5c158;
-            --card-bg: #ffffff;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* --- Wax Seal Overlay Intro --- */
-        #invitation-cover {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #f5f2eb;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
-            box-shadow: inset 0 0 100px rgba(0,0,0,0.05);
-        }
-
-        #invitation-cover.opened {
-            transform: translateY(-100%);
-        }
-
-        .envelope-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            color: #4a4a4a;
-            margin-bottom: 30px;
-            letter-spacing: 3px;
-            text-align: center;
-        }
-
-        .wax-seal {
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, #b81d24 20%, #800020 80%);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #e5c158;
-            font-family: 'Pinyon Script', cursive;
-            font-size: 3rem;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(128,0,32,0.4), inset 0 0 10px rgba(0,0,0,0.3);
-            border: 3px solid #990011;
-            user-select: none;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.04); box-shadow: 0 15px 30px rgba(128,0,32,0.5); }
-            100% { transform: scale(1); }
-        }
-
-        .click-hint {
-            margin-top: 15px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #888;
-        }
-
-        /* --- Sticky Dashboard controls --- */
-        .dashboard {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 900;
-        }
-
-        .dash-btn {
-            background-color: var(--card-bg);
-            border: 1px solid var(--accent-color);
-            color: var(--primary-color);
-            padding: 12px;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-        }
-
-        .theme-menu {
-            display: none;
-            position: absolute;
-            bottom: 60px;
-            right: 0;
-            background: var(--card-bg);
-            border: 1px solid var(--accent-color);
-            border-radius: 8px;
-            padding: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .theme-btn {
-            background: none;
-            border: none;
-            padding: 5px 15px;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            text-align: left;
-            width: 120px;
-        }
-
-        /* --- Global Layout --- */
-        header {
-            text-align: center;
-            padding: 60px 20px 30px;
-        }
-
-        .main-title {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 5rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .sub-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* --- Embedded Images Styling --- */
-        .wedding-img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            border: 1px solid rgba(0,0,0,0.05);
-            display: block;
-            object-fit: cover;
-        }
-
-        .hero-gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        /* --- Countdown Section --- */
-        .countdown-container {
-            background-color: var(--card-bg);
-            border: 1px solid var(--accent-color);
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-        }
-
-        .countdown-timer {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .time-block span {
-            display: block;
-            font-size: 2rem;
-            font-family: 'Cinzel', serif;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        /* --- Timeline Section --- */
-        .section-title {
-            font-family: 'Cinzel', serif;
-            text-align: center;
-            margin: 60px 0 20px;
-            font-size: 2rem;
-            color: var(--primary-color);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 20px;
-            background: radial-gradient(circle, var(--accent-color) 2px, transparent 3px);
-            background-size: 8px 8px;
-            margin: 8px auto 0;
-        }
-
-        .day-navigation {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .day-tab {
-            background-color: var(--card-bg);
-            border: 1px solid var(--accent-color);
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-family: 'Cinzel', serif;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text-color);
-        }
-
-        .day-tab.active {
-            background-color: var(--primary-color);
-            color: #ffffff;
-        }
-
-        .timeline-content {
-            display: none;
-        }
-
-        .timeline-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        .itinerary-card {
-            background: var(--card-bg);
-            border-left: 4px solid var(--primary-color);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 0 12px 12px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-        }
-
-        .itinerary-time {
-            font-family: 'Cinzel', serif;
-            font-weight: bold;
-            color: var(--accent-color);
-            font-size: 1.1rem;
-        }
-
-        .itinerary-event {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 5px 0;
-            color: var(--primary-color);
-        }
-
-        .itinerary-details {
-            font-size: 0.95rem;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .dress-code-box {
-            background-color: var(--card-bg);
-            border: 1px dashed var(--accent-color);
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-        }
-
         /* --- RSVP Section --- */
         .rsvp-container {
             background-color: var(--card-bg);
@@ -852,108 +530,96 @@
                 📞 Phone / WhatsApp: +91 9426938224
             </p>
             <!-- Pre-filled WhatsApp API anchor link -->
-            <a href="https://api.whatsapp.com/send?phone=919426938224&text=Hello!%20I%20would%20love%20to%20confirm%20mon --- */
-        .rsvp-container {
-            background-color: var(--card-bg);
-            border: 1px solid var(--accent-color);
-            padding: 40px 20px;
-            border-radius: 12px;
-            text-align: center;
-            margin: 50px 0;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.03);
-        }
+                    <!-- RSVP Form Section -->
+        <div class="rsvp-container">
+            <h2 class="rsvp-title">Kindly Respond</h2>
+            <p style="font-size: 0.95rem; max-width: 500px; margin: 0 auto 15px; color: #666;">
+                Please let us know if you will be able to join us for our celebrations. Kindly send your confirmation details to us.
+            </p>
+            <p style="font-family: 'Cinzel', serif; font-weight: 600; font-size: 1.1rem; color: var(--primary-color);">
+                📞 Phone / WhatsApp: +91 9426938224
+            </p>
+            <!-- Pre-filled WhatsApp API anchor link -->
+            <a href="https://api.whatsapp.com/send?phone=919426938224&text=Hello!%20I%20would%20love%20to%20confirm%20my%20attendance%20for%20the%20wedding%20celebrations.%20Name(s):" 
+               target="_blank" 
+               class="rsvp-btn">
+               ✉️ RSVP via WhatsApp
+            </a>
+        </div>
 
-        .rsvp-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .rsvp-btn {
-            display: inline-block;
-            background-color: #25D366; /* WhatsApp Green */
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            text-decoration: none;
-            padding: 14px 30px;
-            border-radius: 30px;
-            margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .rsvp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 600px) {
-            .main-title { font-size: 3.5rem; }
-            .sub-title { font-size: 1.2rem; }
-            .time-block span { font-size: 1.5rem; }
-            .hero-gallery { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Wax Seal Cover Page -->
-    <div id="invitation-cover">
-        <div class="envelope-title">YOU ARE INVITED</div>
-        <div class="wax-seal" onclick="openInvitation()">W</div>
-        <div class="click-hint">Tap Seal to Open</div>
     </div>
 
-    <!-- Sticky UI Dashboard Controls -->
-    <div class="dashboard">
-        <button class="dash-btn" onclick="toggleThemeMenu()" title="Change Aesthetic">🎨</button>
-        <div class="theme-menu" id="themeMenu">
-            <button class="theme-btn" onclick="setTheme('burgundy')" style="color: #800020;">Burgundy</button>
-            <button class="theme-btn" onclick="setTheme('emerald')" style="color: #046307;">Emerald</button>
-            <button class="theme-btn" onclick="setTheme('sapphire')" style="color: #0f2c59;">Sapphire</button>
-        </div>
-        <button class="dash-btn" id="musicBtn" onclick="toggleMusic()" title="Play/Pause Music">🎵</button>
-    </div>
+    <script>
+        // Unboxing Wax Seal Interaction
+        function openInvitation() {
+            document.getElementById('invitation-cover').classList.add('opened');
+            const music = document.getElementById('bgMusic');
+            music.play().catch(error => console.log("Audio autoplay prevented."));
+        }
 
-    <!-- Hidden Background Music Element -->
-    <audio id="bgMusic" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+        // Atmosphere Aesthetic Palette Menu Toggle
+        function toggleThemeMenu() {
+            const menu = document.getElementById('themeMenu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
 
-    <header>
-        <div class="main-title">The Wedding</div>
-        <div class="sub-title">Master Plan Experience</div>
-        <p style="letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem; color: var(--accent-color); margin-bottom: 25px;">August 5 – 8, 2026</p>
-    </header>
+        function setTheme(themeName) {
+            if(themeName === 'burgundy') {
+                document.documentElement.removeAttribute('data-theme');
+            } else {
+                document.documentElement.setAttribute('data-theme', themeName);
+            }
+            document.getElementById('themeMenu').style.display = 'none';
+        }
 
-    <div class="container">
-        
-        <!-- Welcome Hero Gallery -->
-        <div class="hero-gallery">
-            <img src="https://i.postimg.cc/3xF42jvN/RYI-2339.jpg" class="wedding-img" alt="Wedding Portrait Left">
-            <img src="https://i.postimg.cc/kgmRVYDk/RYI-2373.jpg" class="wedding-img" alt="Wedding Portrait Right">
-        </div>
+        // Background Audio Custom Mechanics
+        function toggleMusic() {
+            const music = document.getElementById('bgMusic');
+            const btn = document.getElementById('musicBtn');
+            if (music.paused) {
+                music.play();
+                btn.innerText = "🎵";
+            } else {
+                music.pause();
+                btn.innerText = "🔇";
+            }
+        }
 
-        <!-- Countdown Widget -->
-        <div class="countdown-container">
-            <h3 style="font-family: 'Cinzel', serif;">Counting Down to the Big Day</h3>
-            <div class="countdown-timer" id="timer">
-                <div class="time-block"><span id="days">00</span>Days</div>
-                <div class="time-block"><span id="hours">00</span>Hrs</div>
-                <div class="time-block"><span id="minutes">00</span>Mins</div>
-                <div class="time-block"><span id="seconds">00</span>Secs</div>
-            </div>
-        </div>
+        // Tab Navigation Mechanics for Schedule
+        function switchDay(dayNumber) {
+            document.querySelectorAll('.day-tab').forEach((tab, index) => {
+                if(index === (dayNumber - 1)) tab.classList.add('active');
+                else tab.classList.remove('active');
+            });
 
-        <!-- Interactive Schedule Section -->
-        <h2 class="section-title">The Celebration Itinerary</h2>
-        
-        <div class="day-navigation">
+            document.querySelectorAll('.timeline-content').forEach((content, index) => {
+                if(index === (dayNumber - 1)) content.classList.add('active');
+                else content.classList.remove('active');
+            });
+        }
+
+        // Dynamic Countdown Engine (Target Date: August 5, 2026)
+        const targetDate = new Date("August 5, 2026 09:00:00").getTime();
+
+        const countdownInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            if (difference < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("timer").innerHTML = "<h3>The Celebration Has Begun!</h3>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
